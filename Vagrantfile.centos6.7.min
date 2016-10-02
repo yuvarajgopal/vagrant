@@ -1,9 +1,11 @@
 Vagrant.configure("2") do |config|
     config.vm.define "chefserver" do |node|
       node.vm.box = "cjwelle/Centos-6.7-minimal"
+      node.vm.box = "cjwelle/Centos-6.7-minimal"
       node.vm.network "private_network", ip: "192.168.0.30"
       node.vm.hostname = "chefserver.lab.com"
       node.vm.provider "virtualbox" do |v|
+        v.name = chefserver
         v.memory = 2048
       end
     end
